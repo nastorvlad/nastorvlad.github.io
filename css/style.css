@@ -3,65 +3,172 @@
     padding: 0;
     box-sizing: border-box;
 }
-.img-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    /* grid-template-rows: 200px 200px 200px 200px 200px; */
-    object-fit: cover;
-    column-gap: 10px;
-}
-.main__img {
 
-}
-.main__grid-element {
-    height: 200px;
-}
-.main__grid-element1 {
-    background-color: bisque;
-    grid-column: 1 / 2;
-
-}
-.main__grid-element2 {
-    background-color: rgb(68, 45, 243);
-    grid-column: 2 / 3;
+body {
+    margin: 0 auto;
 }
 
-.main__grid-element3 {
-    background-color: rgb(235, 167, 85);
-    grid-column: 3 / 4;
+h1 {
+    color: blue;
 }
 
-.main__grid-element4 {
-    background-color: rgb(192, 253, 137);
+h1:hover {
+    color: bisque;
+    transition: all 3s;
 }
 
-.main__grid-element5 {
-    background-color: rgb(224, 146, 255);
-    grid-column: 5 / 6;
-
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50vh;
+    transform: translate(0, -50%);
+    gap: 50px;
 }
 
-.main__grid-element6 {
-    background-color: rgb(139, 133, 251);
+.image {
+    border-radius: 50px;
 }
 
-.main__grid-element7 {
-    background-color: rgb(255, 127, 127);
-    grid-column: 1 / 3;
+.image_1,
+.image_2 {
+    transition: all 2s cubic-bezier(.1, 1.02, .89, .25);
 }
 
-.main__grid-element8 {
-    background-color: rgb(117, 250, 252);
-    grid-column: 3 / 5;
+.image_1:hover {
+    border-radius: 50%;
+    transform: scale(1.5, 1.5) translate(0%, -25%);
+    /* transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s; */
+    transition: all 2s ease-in-out;
 }
 
-.main__grid-element9 {
-    background-color: rgb(251, 121, 195);
-    grid-column: 5 / 7;
+.image_2:hover {
+    border-radius: 50%;
+    transform: scale(1.5, 1.5) translate(0%, 25%);
+    transition: all 2s ease-in-out;
 }
 
-.main__grid-element10 {
-    background-color: rgb(247, 225, 137);
-    grid-column: 1 / 7;
+.image_3 {
+    /* animation-play-state: paused; */
 }
 
+.image_3:hover {
+    animation-name: resize;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    /* animation-fill-mode: forwards; */
+}
+
+.image_4:hover {
+    animation-name: resize;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    /* animation-fill-mode: forwards; */
+}
+
+.image_5 {
+    animation-name: border;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+.image_5:hover {
+    animation-name: border;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    /* animation-fill-mode: forwards; */
+}
+
+/* @keyframes border {
+    from {
+        border: 1px solid coral;
+    }
+
+    50% {
+        border: 50px solid rgb(234, 255, 96);
+    }
+
+    to {
+        border: 1px solid rgb(115, 173, 253);
+    }
+} */
+
+@keyframes resize {
+    from {
+        transform: scale(0.5, 0.5);
+    }
+
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+
+    75% {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+.image_6 {
+    animation-name: move;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move {
+    50% {
+        transform: translateX(1400px)
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+.image_7 {
+    animation-name: move2;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move2 {
+    50% {
+        transform: translate(1050px, -350px)
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.image_8 {
+    animation-name: move3;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move3 {
+    33% {
+        transform: translateX(700px)
+    }
+    66% {
+        transform: translate(700px, -350px);
+    }
+}

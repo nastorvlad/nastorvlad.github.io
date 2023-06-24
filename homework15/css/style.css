@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50vh;
+    transform: translate(0, -50%);
+    gap: 50px;
+}
+
+.image {
+    border-radius: 100px;
+}
+.image_9 {
+    animation-name: move1;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move1 {
+    25% {
+        transform: translate(350px, -350px)
+    }
+    50% {
+        transform: translate(0px, -350px)
+    }
+    75% {
+        transform: translate(350px, 0px);
+    }
+}
+.image_10 {
+    animation-name: move2;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes move2 {
+    25% {
+        transform: translate(-1400px)
+    }
+    50% {
+        transform: translate(-1400px, -350px)
+    }
+    75% {
+        transform: translate(0px, -350px)
+    }
+}
